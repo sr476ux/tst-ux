@@ -1,0 +1,75 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "tsc watch",
+            "type": "shell",
+            "command": ".\\node_modules\\.bin\\tsc",
+            "isBackground": true,
+            "args": ["--watch", "--noEmit", "--project", "tsconfig.json"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "never",
+                "echo": false,
+                "focus": false,
+                "panel": "dedicated"
+            },
+            "problemMatcher": "$tsc-watch",
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        {
+            "type": "npm",
+            "script": "start:vite",
+            "problemMatcher": [],
+            "label": "npm: start:vite",
+            "detail": "vite"
+        },
+        {
+            "type": "npm",
+            "script": "storybook",
+            "problemMatcher": [],
+            "label": "npm: storybook",
+            "detail": "start-storybook -p 6006 -c ./config/storybook"
+        },
+        {
+            "type": "npm",
+            "script": "lint:ts:fix",
+            "problemMatcher": [],
+            "label": "npm: lint:ts:fix",
+            "detail": "eslint \"**/*.{ts,tsx}\" --fix"
+        },
+        {
+            "type": "npm",
+            "script": "lint:scss:fix",
+            "problemMatcher": [],
+            "label": "npm: lint:scss:fix",
+            "detail": "npx stylelint \"**/*.scss\" --fix"
+        },
+        {
+            "type": "npm",
+            "script": "test:ui",
+            "problemMatcher": [],
+            "label": "npm: test:ui",
+            "detail": "npx loki test --chromeTolerance 1"
+        },
+        {
+            "type": "npm",
+            "script": "test:ui:report",
+            "problemMatcher": [],
+            "label": "npm: test:ui:report",
+            "detail": "npm run test:ui:json && npm run test:ui:html"
+        },
+        {
+            "type": "npm",
+            "script": "test:ui:ok",
+            "problemMatcher": [],
+            "label": "npm: test:ui:ok",
+            "detail": "npx loki approve"
+        }
+    ]
+}

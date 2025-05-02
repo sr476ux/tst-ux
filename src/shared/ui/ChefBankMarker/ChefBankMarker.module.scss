@@ -1,0 +1,18 @@
+.ChefBankMarker {
+    height: 20px;
+    gap: 2px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.text {
+    line-height: 18px;
+    font-size: 12px;
+    line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: box;
+    -webkit-box-orient: vertical;
+    font-weight: 400;
+}

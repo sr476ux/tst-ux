@@ -1,0 +1,8 @@
+/build
+node_modules
+.vercel
+/coverage
+/storybook-static
+.loki/report.html
+.loki/report.json
+/reports/unit

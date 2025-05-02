@@ -1,0 +1,50 @@
+{
+    // Excluding the generated directories keeps your file view clean and speeds up search.
+    "files.exclude": {
+        "**/.git": true
+    },
+    "search.exclude": {
+        "**/.git": true
+    },
+
+    //jest
+    "jest.jestCommandLine": "npx jest --config ./config/jest/jest.config.ts",
+
+    //cSpell
+    "cSpell.words": [
+        "ADDUSER",
+        "BIZNESA",
+        "buyertype",
+        "carusel",
+        "deepmerge",
+        "DLYA",
+        "favoritecategory",
+        "fetchpriority",
+        "headertabroutes",
+        "headlessui",
+        "inited",
+        "languagedetector",
+        "LOCALSTORAGE",
+        "marketcms",
+        "marketfront",
+        "mpic",
+        "nums",
+        "Parens",
+        "passp",
+        "plusplus",
+        "pmmmwh",
+        "promocodes",
+        "recom",
+        "reduxjs",
+        "serg",
+        "Spacebar",
+        "stylelint",
+        "svgr",
+        "termsofuse",
+        "testid",
+        "thinsp",
+        "unselectable",
+        "webp"
+    ],
+    "cSpell.ignorePaths": ["json-server/db.json", "json-server/market/data/**"]
+}

@@ -1,0 +1,21 @@
+.UserProfile {
+    display: block;
+}
+
+.profile {
+    display: block;
+}
+
+.menuItems {
+    position: relative;
+    transition: transform 0.3s ease-out;
+    background: #fff;
+    font-size: 16px;
+    padding: 8px 8px 12px;
+}
+
+.newUser {
+    margin-top: 4px;
+    background: #f4f4f4;
+    padding: 8px;
+}
