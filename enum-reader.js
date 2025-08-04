@@ -57,6 +57,44 @@ class EnumConsoleWebpackPlugin {
     visit(sourceFile);
     return enumObj;
   }
+
+  extractConst(tsContent, constName) {
+    const sourceFile = ts.createSourceFile(
+      'temp.ts',
+      tsContent,
+      ts.ScriptTarget.Latest
+    );
+    let foundObj = null;
+    function visit(node) {
+      if (
+        ts.isVariableStatement(node)
+      ) {
+        node.declarationList.declarations.forEach(decl => {
+          if (
+            decl.name &&
+            decl.name.text === constName &&
+            decl.initializer &&
+            ts.isObjectLiteralExpression(decl.initializer)
+          ) {
+            foundObj = {};
+            decl.initializer.properties.forEach(prop => {
+              const key = prop.name.text;
+              let value;
+              if (ts.isStringLiteral(prop.initializer) || ts.isNumericLiteral(prop.initializer)) {
+                value = prop.initializer.text;
+              } else {
+                value = prop.initializer.getText();
+              }
+              foundObj[key] = value;
+            });
+          }
+        });
+      }
+      ts.forEachChild(node, visit);
+    }
+    visit(sourceFile);
+    return foundObj;
+  }
 }
 
 module.exports = EnumConsoleWebpackPlugin;
